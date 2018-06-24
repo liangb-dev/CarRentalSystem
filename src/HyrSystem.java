@@ -45,6 +45,8 @@ import java.util.ArrayList;
               upon. Rather than tell the user that he/she has made an error by the end of
               the form, it would save time to alert the user as soon as he/she enters an
               invalid input.
+           d. Another additional option in the future could be the ability to modify
+              registrations.
  */
 
 /**
@@ -65,7 +67,7 @@ public class HyrSystem {
         try {
             br = new BufferedReader(new InputStreamReader(System.in));
             while (true) {
-                System.out.println("Enter command Hitta-Bokning('H'), Utlämning('U'), Återlämning('A'), Visa Bilar('V'), Exit('X'): ");
+                System.out.println("Enter Command (Hitta-Bokning['H'], Utlämning['U'], Återlämning['A'], Visa Bilar['V'], Exit['X']: ");
                 choice = br.readLine();
 
                 switch (choice.toUpperCase()) {
@@ -94,8 +96,8 @@ public class HyrSystem {
                         visaBilar();
                         break;
                     default:
-                        System.out.println("Invalid command...");
-                        System.out.println("Try again. ");
+                        System.out.println("Ogiltig val...");
+                        System.out.println("Försök igen. ");
                         break;
                 }
             }
@@ -177,7 +179,7 @@ public class HyrSystem {
         }
         // If no matches were found
         if (count == 0) {
-            System.out.println("Booking does not exist. ");
+            System.out.println("Bokning kunde ej hittas. ");
             return false;
         }
         return true;
@@ -204,7 +206,7 @@ public class HyrSystem {
 
         // If empty array is returned then booking does not exist and can't be returned
         if (result.size() < 1) {
-            System.out.println("Booking does not exist. ");
+            System.out.println("Bokning kunde ej hittas. ");
             return false;
         }
 

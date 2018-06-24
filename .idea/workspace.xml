@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79a22665-8948-49bb-8c54-1a928d1d4521" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Bil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HyrSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HyrSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +53,8 @@
       <file leaf-file-name="HyrSystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HyrSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="207" column="25" lean-forward="true" selection-start-line="207" selection-start-column="25" selection-end-line="207" selection-end-column="25" />
+            <state relative-caret-position="288">
+              <caret line="175" column="20" lean-forward="true" selection-start-line="175" selection-start-column="20" selection-end-line="175" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,7 +65,7 @@
       <file leaf-file-name="Bil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
+            <state relative-caret-position="1359">
               <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
               <folding>
                 <element signature="e#4639#4640#0" expanded="true" />
@@ -302,7 +300,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="1359">
           <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
           <folding>
             <element signature="e#4639#4640#0" expanded="true" />
@@ -313,8 +311,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HyrSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="207" column="25" lean-forward="true" selection-start-line="207" selection-start-column="25" selection-end-line="207" selection-end-column="25" />
+        <state relative-caret-position="288">
+          <caret line="175" column="20" lean-forward="true" selection-start-line="175" selection-start-column="20" selection-end-line="175" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
