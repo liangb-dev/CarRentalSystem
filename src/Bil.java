@@ -1,6 +1,3 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public abstract class Bil {
     // fields
     private String status = ""; // 'återlämnad' or 'utlämnad'

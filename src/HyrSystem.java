@@ -213,8 +213,8 @@ public class HyrSystem {
         // are, we also don't want to modify all of them.
         int i = 0;
         //for (int i : result) {
-            återlämnadeBilar.add(utlämnadeBilar.get(i).återlämnad(Integer.parseInt(ans.get(1))));
-            utlämnadeBilar.remove(i);
+            återlämnadeBilar.add(utlämnadeBilar.get(result.get(i)).återlämnad(Integer.parseInt(ans.get(1))));
+            utlämnadeBilar.remove(utlämnadeBilar.get(result.get(i)));
         //}
         return true;
     }
