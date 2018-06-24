@@ -3,21 +3,21 @@ import java.util.Date;
 
 public abstract class Bil {
     // fields
-    String status = "";
-    String boknum = "";
-    String regnum = "";
-    String personnum = "";
-    String biltyp = "";
-    String utlämnad = "";
-    String återlämnad = "";
-    float mätare = 0;
-    float slutställning = 0;
-    float basDygnsHyra = 0;
-    float basKmPris = 0;
+    private String status = ""; // 'återlämnad' or 'utlämnad'
+    private String boknum = "";
+    private String regnum = "";
+    private String personnum = "";
+    private String biltyp = "";
+    private String utlämnad = ""; // date
+    private String återlämnad = ""; // date
+    private float mätare = 0;
+    private float slutställning = 0;
+    protected float basDygnsHyra = 0;
+    protected float basKmPris = 0;
 
-    int antalDygn = 0;
-    float antalKm = 0;
-    double pris = 0;
+    private int antalDygn = 0;
+    private float antalKm = 0;
+    private double pris = 0;
 
 
 
@@ -36,19 +36,38 @@ public abstract class Bil {
 
 
     // Methods
+    /**
+     * Abstract method implemented separately by child classes depending on their
+     * own formulas.
+     * @param antalDygn
+     * @param antalKm
+     * @return
+     */
     protected abstract double calculateTotalPrice(int antalDygn, float antalKm);
 
+    /**
+     * Calculates and modifies the following fields:
+     *   - this.status (= 'återlämnad')
+     *   - this.slutställning (= given parameter)
+     *   - this.återlämnad (= current date)
+     *   - this.antalDygn (= return date - rented date)
+     *   - this.antalKm (= odometer_now - odometer_before)
+     *   - this.pris (calls CalculateTotalPrice)
+     * And returns current (post-modifications) object.
+     *
+     * @param mätarställning
+     * @return
+     */
     protected Bil återlämnad(float mätarställning) {
         this.status = "återlämnad";
         this.slutställning = mätarställning;
         this.återlämnad = "201807232340";//new SimpleDateFormat("yyyyMMddHHmm").format(new Date());
-        this.antalDygn = antalDygn;
-        this.antalKm = antalKm;
-        this.pris = pris;
+        this.antalKm = this.slutställning - this.mätare;
 
         String utlånad = this.utlämnad;
         String återlämnad = this.återlämnad;
 
+        // Calulate number of days in rental
         int umin = Integer.parseInt("" + utlånad.charAt(10) + utlånad.charAt(11));
         int uhour = Integer.parseInt("" + utlånad.charAt(8) + utlånad.charAt(9));
         int uday = Integer.parseInt("" + utlånad.charAt(6) + utlånad.charAt(7));
@@ -63,20 +82,25 @@ public abstract class Bil {
         int hour = (24 - uhour) + åhour;
         int day = (30 - uday) + åday;
         int months = åmonths - umonths - 1;
+        this.antalDygn = (hour + min/60)/24 + day + months*30;
 
-        antalDygn = (hour + min/60)/24 + day + months*30;
-        if (antalDygn > 1) {
-            antalDygn--;
+        // Accomodating for rentals < 1 day
+        if (this.antalDygn > 1) {
+            this.antalDygn--;
         }
-        antalKm = this.slutställning - this.mätare;
-
+        // Calculate price
         this.pris = calculateTotalPrice(antalDygn, antalKm);
-
 
         return this;
     }
 
-
+    /**
+     * Prints out all available information on Bil object.
+     * If the car has been returned, then it will also print out
+     * the 'Faktura' (Billing) including so far antalDygn (number
+     * of days rented), antalKm (number of Km driven), and pris
+     * (total price).
+     */
     protected void printSpecs() {
         System.out.println("Bil Status: " + status);
         System.out.println("Bokningsnummer: " + boknum);
@@ -97,6 +121,14 @@ public abstract class Bil {
             System.out.println("Total Pris: " + pris);
         }
 
+    }
+
+    /**
+     * Getter for field this.boknum.
+     * @return
+     */
+    public String getBoknum() {
+        return this.boknum;
     }
 
 

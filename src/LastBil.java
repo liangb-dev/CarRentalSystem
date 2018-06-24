@@ -9,6 +9,12 @@ public class LastBil extends Bil {
                 new SimpleDateFormat("yyyyMMddHHmm").format(new Date()),30,10);
     }
 
+    /**
+     * 'Lastbil' implementation of calculateTotalPrice.
+     * @param antalDygn
+     * @param antalKm
+     * @return
+     */
     protected double calculateTotalPrice(int antalDygn, float antalKm) {
         double price = basDygnsHyra * antalDygn * 1.5 + basKmPris * antalKm * 1.5;
         return price;

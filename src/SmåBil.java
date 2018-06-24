@@ -9,6 +9,12 @@ public class SmåBil extends Bil {
                 new SimpleDateFormat("yyyyMMddHHmm").format(new Date()),10,0);
     }
 
+    /**
+     * 'Småbil' implementation of calculateTotalPrice.
+     * @param antalDygn
+     * @param antalKm
+     * @return
+     */
     protected double calculateTotalPrice(int antalDygn, float antalKm) {
         double price = basDygnsHyra * antalDygn;
         return price;

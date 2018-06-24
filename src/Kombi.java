@@ -9,6 +9,12 @@ public class Kombi extends Bil{
                 new SimpleDateFormat("yyyyMMddHHmm").format(new Date()),20,5);
     }
 
+    /**
+     * 'Kombi' implementation of calculateTotalPrice.
+     * @param antalDygn
+     * @param antalKm
+     * @return
+     */
     protected double calculateTotalPrice(int antalDygn, float antalKm) {
         double price = basDygnsHyra * antalDygn * 1.3 + basKmPris * antalKm;
         return price;
