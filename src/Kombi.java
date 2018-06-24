@@ -6,7 +6,7 @@ public class Kombi extends Bil{
     // Constructor
     Kombi(String boknum, String regnum, String personnum, float mätare) {
         super(boknum, regnum, personnum, "Kombi", mätare,
-                new SimpleDateFormat("yyyyMMddHHmm").format(new Date()),20,5);
+                new SimpleDateFormat("yyyyMMddHHmm").format(new Date()));
     }
 
     /**

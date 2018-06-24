@@ -6,7 +6,7 @@ public class LastBil extends Bil {
     // Constructor
     LastBil(String boknum, String regnum, String personnum, float mätare) {
         super(boknum, regnum, personnum, "Lastbil", mätare,
-                new SimpleDateFormat("yyyyMMddHHmm").format(new Date()),30,10);
+                new SimpleDateFormat("yyyyMMddHHmm").format(new Date()));
     }
 
     /**

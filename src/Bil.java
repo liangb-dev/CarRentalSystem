@@ -18,7 +18,7 @@ public abstract class Bil {
 
 
 
-    Bil(String boknum, String regnum, String personnum, String biltyp, float mätare, String utlämnad, float dygnHyra, float kmpris) {
+    Bil(String boknum, String regnum, String personnum, String biltyp, float mätare, String utlämnad) {
         this.status = "utlämnad";
         this.boknum = boknum;
         this.regnum = regnum;
@@ -27,8 +27,8 @@ public abstract class Bil {
         this.biltyp = biltyp;
         this.utlämnad = utlämnad;
 
-        this.basDygnsHyra = dygnHyra;
-        this.basKmPris = kmpris;
+        this.basDygnsHyra = 200;
+        this.basKmPris = 2;
     }
 
 
